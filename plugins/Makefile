@@ -20,7 +20,7 @@ TENSORRT_INCS=-I"/usr/local/TensorRT-7.1.3.4/include"
 TENSORRT_LIBS=-L"/usr/local/TensorRT-7.1.3.4/lib"
 
 # Определяем версию TensorRT (берём первую цифру)
-TENSORRT_VERSION := $(shell grep -Po '(?<=#define NV_TENSORRT_MAJOR )[0-9]+' /usr/include/aarch64-linux-gnu/NvInferVersion.h)
+TENSORRT_VERSION := $(shell grep -Po '(?<=\#define NV_TENSORRT_MAJOR )[0-9]+' /usr/include/aarch64-linux-gnu/NvInferVersion.h)
 $(info TensorRT version major: $(TENSORRT_VERSION))
 
 # INCS
